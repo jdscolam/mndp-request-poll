@@ -1,0 +1,17 @@
+{
+  "name": "mndp-request-poll",
+  "version": "1.0.0",
+  "description": "Lambda based request poller for MNDP requests",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Jon Scolamiero",
+  "license": "MIT",
+  "repository": "https://github.com/jdscolam/mndp-request-poll",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "firebase-admin": "^5.2.0",
+    "lodash": "^4.17.4"
+  }
+}
