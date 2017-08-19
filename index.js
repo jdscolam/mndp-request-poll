@@ -21,7 +21,7 @@ exports.handler = (event, context) => {
         databaseURL: process.env.database_url
     });
 
-    // Get a database reference to our posts
+    //Get a database reference.
     let fb = admin.database();
 
     updateRequests(fb)
