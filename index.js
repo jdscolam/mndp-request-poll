@@ -8,6 +8,7 @@ const admin = require("firebase-admin");
 
 const NOW_PLAYING = 'nowplaying';
 const TAG_NAME = 'mondaynightdanceparty';
+const SOURCE = 'poller';
 
 // noinspection JSUnusedLocalSymbols
 exports.handler = (event, context) => {
@@ -207,13 +208,17 @@ function generateRequest(requestPost, title){
         postId: requestPost.id,
         videoEmbedLink: requestPost.linkDetails.embeddedLink,
         videoId: requestPost.linkDetails.id,
-        title: title
+        title: title,
+        source: SOURCE
     };
 
     if(requestPost.user)
     {
         request.user = requestPost.user.username;
         request.userId = requestPost.user.id;
+        request.avatarLink = requestPost.user.content.avatar_image && requestPost.user.content.avatar_image.link
+            ? requestPost.user.content.avatar_image.link
+            : '';
     }
 
     return request;
